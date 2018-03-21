@@ -1,0 +1,71 @@
+<% if user_signed_in? %>
+  <h1>Credit Cards</h1>
+
+  <% if current_user.credit_cards.any? %>
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric"><%= link_to 'Name', :sort => 'card_NickName'  %>  </th>
+          <th class="mdl-data-table__cell--non-numeric"><%= link_to 'Provider', :sort => 'card_provider' %></th>
+          <th class="mdl-data-table__cell--non-numeric"><%= link_to 'Points', :sort => 'points_provider'   %></th>
+          <th>%</th>
+          <th>Balance</th>
+          <th>Limit</th>
+          <th>Available</th>
+          <th>Min Payments</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @credit_cards.each do |credit_card| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric"><%= link_to credit_card.card_NickName, credit_card %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= credit_card.card_provider %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= credit_card.points_provider %></td>
+            <td><%= number_to_percentage(credit_card.interest_rate * 100, precision: 2) %></td>
+            <td><%= number_to_currency(credit_card.card_balance, unit: "$") %></td>
+            <td><%= number_to_currency(credit_card.card_limit, unit: "$") %></td>
+            <td><%= number_to_currency(credit_card.credit_available, unit: "$") %></td>
+            <td><%= number_to_currency(credit_card.minimum_payment, unit: "$") %></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><%= number_to_currency(@credit_card_debt, unit: "$") %></td>
+          <td><%= number_to_currency(@credit_limit, unit: "$") %></td>
+          <td><%= number_to_currency(@available_credit, unit: "$") %></td>
+          <td><%= number_to_currency(@total_monthly_payment, unit: "$") %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br>
+
+    <%= link_to new_credit_card_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
+            <i class="material-icons">add</i>
+        <% end %>
+  <% else %>
+    <%= link_to new_credit_card_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
+      <i class="material-icons">add</i>
+    <% end %>
+  <% end %>
+<% else %>
+
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet"></div>
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet"><h1>Credit Card Smarts at your fingertips</h1></div>
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet"></div>
+<% end %>
+
+
