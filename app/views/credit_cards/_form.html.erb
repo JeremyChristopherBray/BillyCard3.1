@@ -1,40 +1,39 @@
 <%= form_for @credit_card do |f| %>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= f.label :card_NickName, class: 'mdl-textfield__label' %>
-    <%= f.text_field :card_NickName, class: 'mdl-textfield__input' %>
+    <%= f.label :nickName, class: 'mdl-textfield__label' %>
+    <%= f.text_field :nickName, class: 'mdl-textfield__input' %>
       <span class="spin"></span>
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <%= f.label :card_provider, class: 'mdl-textfield__label' %>
-      <%= f.text_field :card_provider, class: 'mdl-textfield__input' %>
+      <%= f.label :provider, class: 'mdl-textfield__label' %>
+      <%= f.text_field :provider, class: 'mdl-textfield__input' %>
       <span class="spin"></span>
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <%= f.label :points_provider, class: 'mdl-textfield__label' %>
-      <%= f.text_field :points_provider, class: 'mdl-textfield__input' %>
+      <%= f.label :pointsProvidor, class: 'mdl-textfield__label' %>
+      <%= f.text_field :pointsProvidor, class: 'mdl-textfield__input' %>
       <span class="spin"></span>
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <%= f.label :interest_rate, class: 'mdl-textfield__label' %>
-      <%= f.number_field :interest_rate, class: 'mdl-textfield__input', step: :any %>
+      <%= f.label :interestRate, class: 'mdl-textfield__label' %>
+      <%= f.number_field :interestRate, class: 'mdl-textfield__input', step: :any %>
       <span class="spin"></span>
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <%= f.label :card_balance, class: 'mdl-textfield__label' %>
-      <%= f.number_field :card_balance, class: 'mdl-textfield__input' %>
+      <%= f.label :balance, class: 'mdl-textfield__label' %>
+      <%= f.number_field :balance, class: 'mdl-textfield__input' %>
       <span class="spin"></span>
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <%= f.label :card_limit, class: 'mdl-textfield__label' %>
-      <%= f.number_field :card_limit, class: 'mdl-textfield__input' %>
+      <%= f.label :limit, class: 'mdl-textfield__label' %>
+      <%= f.number_field :limit, class: 'mdl-textfield__input' %>
       <span class="spin"></span>
     </div>
-    <%= f.hidden_field :user_id, class: 'mdl-textfield__input' %>
 
   <div class="button login">
     <div class="actions">

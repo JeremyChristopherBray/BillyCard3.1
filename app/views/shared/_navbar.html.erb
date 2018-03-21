@@ -10,18 +10,19 @@
           <nav class="mdl-navigation mdl-layout--large-screen-only">
                   <%= link_to 'Credit Cards', credit_cards_path , class: 'mdl-navigation__link' %>
             <% if response.code.to_i != 404 %>
-              <%= current_user.email %>
+              <%= button_tag current_user.email, class: '', id:'demo-menu-lower-left' %>
             <% else %>
               <%= button_tag image_tag(avatar_url(current_user), class: 'avatar', id:'demo-menu-lower-left') %>
             <% end %>
           </nav>
               <% else %>
                   <!-- Title -->
-                  <%= link_to 'Which Billy', root_path, class: 'mdl-layout-title' %>
+                  <%= link_to 'BillyCard', root_path, class: 'mdl-layout-title' %>
                   <!-- Add spacer, to align navigation to the right -->
                   <div class="mdl-layout-spacer"></div>
                   <!-- Navigation. We hide it in small screens. -->
                   <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <li>Pricing</li>
                   <%= link_to 'Log In', new_user_session_path, class: 'mdl-navigation__link' %>
                   <%= link_to 'Sign Up', new_user_registration_path, class: 'mdl-navigation__link' %>
                   </nav>
@@ -30,7 +31,8 @@
     <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
         for="demo-menu-lower-left">
       <li class="mdl-menu__item">Dashboard</li>
-      <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Edit Profile</li>
+      <li class="mdl-menu__item mdl-menu__item--full-bleed-divider"><%= link_to 'Edit Profile', edit_user_registration_path, class: '' %></li>
+
       <li class="mdl-menu__item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
     </ul>
   </header>

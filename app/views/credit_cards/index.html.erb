@@ -20,12 +20,12 @@
       <tbody>
         <% @credit_cards.each do |credit_card| %>
           <tr>
-            <td class="mdl-data-table__cell--non-numeric"><%= link_to credit_card.card_NickName, credit_card %></td>
-            <td class="mdl-data-table__cell--non-numeric"><%= credit_card.card_provider %></td>
-            <td class="mdl-data-table__cell--non-numeric"><%= credit_card.points_provider %></td>
-            <td><%= number_to_percentage(credit_card.interest_rate * 100, precision: 2) %></td>
-            <td><%= number_to_currency(credit_card.card_balance, unit: "$") %></td>
-            <td><%= number_to_currency(credit_card.card_limit, unit: "$") %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= link_to credit_card.nickName, credit_card %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= credit_card.provider %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= credit_card.pointsProvidor %></td>
+            <td><%= number_to_percentage(credit_card.interestRate * 100, precision: 2) %></td>
+            <td><%= number_to_currency(credit_card.balance, unit: "$") %></td>
+            <td><%= number_to_currency(credit_card.limit, unit: "$") %></td>
             <td><%= number_to_currency(credit_card.credit_available, unit: "$") %></td>
             <td><%= number_to_currency(credit_card.minimum_payment, unit: "$") %></td>
             <td></td>
@@ -57,9 +57,11 @@
             <i class="material-icons">add</i>
         <% end %>
   <% else %>
+    You have no Credit Cards, better
     <%= link_to new_credit_card_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
       <i class="material-icons">add</i>
     <% end %>
+    one.
   <% end %>
 <% else %>
 
