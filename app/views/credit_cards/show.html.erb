@@ -1,21 +1,21 @@
 <div class="demo-card-square mdl-card mdl-shadow--2dp">
 <div class="mdl-card__title mdl-card--expand">
-  <h2 class="mdl-card__title-text"><%= @credit_card.card_NickName %></h2>
+  <h2 class="mdl-card__title-text"><%= @credit_card.nickName %></h2>
 </div>
 <div class="mdl-card__supporting-text">
   <p>
     <strong>Card Provider:</strong>
-    <%= @credit_card.card_provider %>
+    <%= @credit_card.provider %>
   </p>
 
   <p>
-    <strong>Interest rate:</strong>
-    <%= number_to_percentage(@credit_card.interest_rate * 100, precision: 2) %>
+    <strong>Interest Rate:</strong>
+    <%= number_to_percentage(@credit_card.interestRate * 100, precision: 2) %></td>
   </p>
 
   <p>
     <strong>Balance:</strong>
-    <%= @credit_card.card_balance %>
+    <%= @credit_card.balance %>
   </p>
   <p>
   Annual Interest: <%= number_to_currency(@credit_card.annual_interest, unit: "$") %>

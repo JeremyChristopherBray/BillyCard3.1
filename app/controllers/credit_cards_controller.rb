@@ -9,6 +9,7 @@ class CreditCardsController < ApplicationController
     @credit_card_debt = current_user.credit_cards.sum(:balance)
     @credit_limit = current_user.credit_cards.sum(:limit)
     @available_credit = current_user.credit_cards.sum(:limit) - current_user.credit_cards.sum(:balance)
+    @total_monthly_payment = total_monthly_payment
   end
 
 
@@ -75,6 +76,6 @@ class CreditCardsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def credit_card_params
-    params.require(:credit_card).permit(:name, :provider, :points_provider, :interest_rate, :balance, :limit, :user_id )
+    params.require(:credit_card).permit(:nickName, :provider, :pointsProvidor, :interestRate, :balance, :limit, :user_id )
   end
 end
