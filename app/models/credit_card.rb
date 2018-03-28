@@ -26,5 +26,16 @@ class CreditCard < ApplicationRecord
     minimum_payment
   end
 
+  def payments_to_payoff
+
+    pp = balance / minimum_payment
+    years = pp / 12
+
+    ai = years * annual_interest
+
+    pp
+  end
+
+
 end
 

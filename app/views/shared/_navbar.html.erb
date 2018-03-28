@@ -10,7 +10,7 @@
           <nav class="mdl-navigation mdl-layout--large-screen-only">
                   <%= link_to 'Credit Cards', credit_cards_path , class: 'mdl-navigation__link' %>
             <% if response.code.to_i != 404 %>
-              <%= button_tag current_user.email, class: '', id:'demo-menu-lower-left' %>
+              <%= button_tag current_user.firstName, class: 'mdl-navigation__link', id:'demo-menu-lower-left' %>
             <% else %>
               <%= button_tag image_tag(avatar_url(current_user), class: 'avatar', id:'demo-menu-lower-left') %>
             <% end %>
@@ -41,10 +41,11 @@
     <nav class="mdl-navigation">
       <% if user_signed_in? %>
         <% if response.code.to_i != 404 %>
-          <%= button_tag current_user.email, class: 'avatar', id:'demo-menu-lower-left' %>
+          <%= button_tag current_user.firstName, class: 'mdl-navigation__link', id:'demo-menu-lower-left' %>
           <%= link_to 'Edit Profile', edit_user_registration_path, class: 'mdl-navigation__link' %>
           <%= link_to 'New Card', new_credit_card_path, class: 'mdl-navigation__link' %>
-          <%= link_to 'All Cards', credit_cards_path , class: 'mdl-navigation__link' %>
+          <%= link_to 'All Cards', credit_cards_path, class: 'mdl-navigation__link' %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'mdl-navigation__link' %>
         <% else %>
           <%= button_tag image_tag(avatar_url(current_user), class: 'avatar', id:'demo-menu-lower-left') %>
           <%= link_to 'Edit Profile', edit_user_registration_path, class: 'mdl-navigation__link' %>

@@ -1,35 +1,37 @@
 <div class="demo-card-square mdl-card mdl-shadow--2dp">
-<div class="mdl-card__title mdl-card--expand">
-  <h2 class="mdl-card__title-text"><%= @credit_card.nickName %></h2>
-</div>
-<div class="mdl-card__supporting-text">
-  <p>
-    <strong>Card Provider:</strong>
-    <%= @credit_card.provider %>
-  </p>
+      <div class="mdl-card__title mdl-card--expand">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><%= @credit_card.nickName %></h2>
+        </div>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <p>
+          <strong>Card Provider:</strong>
+          <%= @credit_card.provider %>
+        </p>
 
-  <p>
-    <strong>Interest Rate:</strong>
-    <%= number_to_percentage(@credit_card.interestRate * 100, precision: 2) %></td>
-  </p>
+        <p>
+          <strong>Interest Rate:</strong>
+          <%= number_to_percentage(@credit_card.interestRate * 100, precision: 2) %></td>
+        </p>
 
-  <p>
-    <strong>Balance:</strong>
-    <%= @credit_card.balance %>
-  </p>
-  <p>
-  Annual Interest: <%= number_to_currency(@credit_card.annual_interest, unit: "$") %>
-  </p>
-  <p>
-    <%= number_to_currency(@credit_card.minimum_payment, unit: "$") %>
-  </p>
-</div>
-<div class="mdl-card__actions mdl-card--border">
-  <%= link_to edit_credit_card_path(@credit_card), class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
-      <i class="material-icons">edit</i>
-  <% end %>
-  <%= link_to credit_cards_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
-      <i class="material-icons">all</i>
-  <% end %>
-</div>
+        <p>
+          <strong>Balance:</strong>
+          <%= @credit_card.balance %>
+        </p>
+        <p>
+          <strong>Annual Interest:</strong> <%= number_to_currency(@credit_card.annual_interest, unit: "$") %>
+        </p>
+        <p>
+          <strong>Minimum Payment:</strong> <%= number_to_currency(@credit_card.minimum_payment, unit: "$") %>
+        </p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <%= link_to edit_credit_card_path(@credit_card), class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
+            <i class="material-icons">edit</i>
+        <% end %>
+        <%= link_to credit_cards_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
+            <i class="material-icons">return</i>
+        <% end %>
+      </div>
 </div>
