@@ -1,0 +1,41 @@
+<%= form_with(model: sub, local: true) do |form| %>
+  <% if sub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sub.errors.count, "error") %> prohibited this sub from being saved:</h2>
+
+      <ul>
+      <% sub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= form.label :name, class: 'mdl-textfield__label' %>
+    <%= form.text_field :name, id: :sub_name, class: 'mdl-textfield__input' %>
+    <span class="spin"></span>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= form.label :description, class: 'mdl-textfield__label' %>
+    <%= form.text_field :description, id: :sub_description, class: 'mdl-textfield__input' %>
+    <span class="spin"></span>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+    <%= form.label :frequency, class: 'mdl-textfield__label' %>
+    <%= form.select :frequency, options_for_select([['Select One',''], 'Weekly', 'Fortnightly', 'Monthly', 'Bi-Monthly', 'Quarterly', 'Annual']), class: 'mdl-menu mdl-menu--bottom-left mdl-js-menu'
+    %>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= form.label :amount, class: 'mdl-textfield__label' %>
+    <%= form.text_field :amount, id: :sub_amount, class: 'mdl-textfield__input' %>
+    <span class="spin"></span>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

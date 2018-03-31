@@ -7,7 +7,10 @@
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <%= f.label :provider, class: 'mdl-textfield__label' %>
+      <%= f.label :provider,id:'tt1', class: 'mdl-textfield__label' %>
+      <div class="mdl-tooltip" data-mdl-for="tt1">
+        Follow
+      </div>
       <%= f.text_field :provider, class: 'mdl-textfield__input' %>
       <span class="spin"></span>
     </div>

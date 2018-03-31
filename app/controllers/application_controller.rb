@@ -22,6 +22,14 @@ class ApplicationController < ActionController::Base
   end
   helper_method 'total_monthly_payment'
 
+  def subs_total_monthly_payment
+
+    n = current_user.subs.sum(&:amount)
+
+    n
+  end
+  helper_method 'subs_total_monthly_payment'
+
   def payments_to_payoff
     balance / minimum_payment
   end

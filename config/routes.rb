@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subs
   get 'pages/home'
 
   resources :credit_cards
