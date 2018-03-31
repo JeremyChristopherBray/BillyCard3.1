@@ -8,7 +8,9 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <%= link_to 'Credit Cards', credit_cards_path , class: 'mdl-navigation__link' %>
+            <%= link_to credit_cards_path , class: 'mdl-navigation__link'  do %>
+              <i class="material-icons">credit_card</i>
+            <% end %>
             <%= link_to 'Subscriptions', subs_path , class: 'mdl-navigation__link' %>
             <% if response.code.to_i != 404 %>
               <%= button_tag current_user.firstName, class: 'mdl-navigation__link', id:'demo-menu-lower-left' %>

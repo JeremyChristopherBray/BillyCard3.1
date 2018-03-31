@@ -28,12 +28,10 @@ class CreditCard < ApplicationRecord
 
   def payments_to_payoff
 
-    ptp = balance / minimum_payment
-    years = ptp / 12
+    pp = balance / minimum_payment
+    years = pp / 12
 
     ai = years * annual_interest
-
-
 
     pp
   end
