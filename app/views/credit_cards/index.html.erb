@@ -55,7 +55,10 @@
     <br>
 
     <%= link_to new_credit_card_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
-            <i class="material-icons">add</i>
+            <i id= 'tt2' class="material-icons">add</i>
+      <div class="mdl-tooltip" data-mdl-for="tt2">
+        New Credit Card
+      </div>
         <% end %>
   <% else %>
     You have no Credit Cards, better

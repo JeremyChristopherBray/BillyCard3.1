@@ -9,7 +9,10 @@
             <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <%= link_to credit_cards_path , class: 'mdl-navigation__link'  do %>
-              <i class="material-icons">credit_card</i>
+              <i id="tt1" class="material-icons">credit_card</i>
+              <div class="mdl-tooltip" data-mdl-for="tt1">
+                Credit Cards
+              </div>
             <% end %>
             <%= link_to 'Subscriptions', subs_path , class: 'mdl-navigation__link' %>
             <% if response.code.to_i != 404 %>
