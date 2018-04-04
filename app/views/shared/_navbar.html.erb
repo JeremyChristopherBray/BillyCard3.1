@@ -14,11 +14,17 @@
                 Credit Cards
               </div>
             <% end %>
-            <%= link_to 'Subscriptions', subs_path , class: 'mdl-navigation__link' %>
-            <% if response.code.to_i != 404 %>
-              <%= button_tag current_user.firstName, class: 'mdl-navigation__link', id:'demo-menu-lower-left' %>
-            <% else %>
-              <%= button_tag image_tag(avatar_url(current_user), class: 'avatar', id:'demo-menu-lower-left') %>
+            <%= link_to subs_path , class: 'mdl-navigation__link' do %>
+              <i id="tt2" class="material-icons">auto_renew</i>
+              <div class="mdl-tooltip" data-mdl-for="tt2">
+                Subscriptions
+              </div>
+            <% end %>
+            <%= link_to '', class: 'mdl-navigation__link', id:'demo-menu-lower-left' do %>
+              <i id="tt3" class="material-icons">account_circle</i>
+              <div class="mdl-tooltip" data-mdl-for="tt3">
+                Account
+              </div>
             <% end %>
           </nav>
               <% else %>
