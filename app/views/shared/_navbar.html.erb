@@ -1,13 +1,19 @@
 <!-- Always shows a header, even in smaller screens. -->
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
             <!-- Title -->
             <%= link_to 'BillyCard', root_path, class: 'mdl-layout-title' %>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <%= link_to '' , class: 'mdl-navigation__link'  do %>
+              <i id="tt1" class="material-icons">dashboard</i>
+              <div class="mdl-tooltip" data-mdl-for="tt1">
+                Dashboard <br> Coming Soon!
+              </div>
+            <% end %>
             <%= link_to credit_cards_path , class: 'mdl-navigation__link'  do %>
               <i id="tt1" class="material-icons">credit_card</i>
               <div class="mdl-tooltip" data-mdl-for="tt1">
@@ -27,7 +33,7 @@
               </div>
             <% end %>
           </nav>
-              <% else %>
+      <% else %>
                   <!-- Title -->
                   <%= link_to 'BillyCard', root_path, class: 'mdl-layout-title' %>
                   <!-- Add spacer, to align navigation to the right -->
