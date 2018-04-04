@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   helper_method 'subs_total_monthly_payment'
 
   def payments_to_payoff
-    balance / minimum_payment
+    current_user.credit_cards.balance / current_user.credit_cards.minimum_payment
   end
 
   helper_method 'payments_to_payoff'
@@ -41,6 +41,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method 'payments_to_payoff'
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:firstName, :lastName])

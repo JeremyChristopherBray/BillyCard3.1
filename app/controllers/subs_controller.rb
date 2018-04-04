@@ -7,6 +7,7 @@ class SubsController < ApplicationController
   def index
     @subs = Sub.all
     @monthly_subs = current_user.subs.sum(:amount)
+    @total_annual_subs = @monthly_subs * 12
   end
 
   # GET /subs/1

@@ -1,5 +1,8 @@
 class CreditCard < ApplicationRecord
   belongs_to :user
+  has_many :payments
+
+
   def credit_available
     limit - balance
   end
