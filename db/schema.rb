@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402014553) do
+ActiveRecord::Schema.define(version: 20180404225533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
   enable_extension "pgcrypto"
+
+  create_table "accounts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.uuid "user_id"
+    t.uuid "transactions_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transactions_id"], name: "index_accounts_on_transactions_id"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
 
   create_table "credit_cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "nickName"
@@ -47,6 +57,11 @@ ActiveRecord::Schema.define(version: 20180402014553) do
     t.uuid "credit_card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "transactionDate"
+    t.decimal "transactionAmount"
+    t.string "transactionDescription"
+    t.uuid "account_id"
+    t.index ["account_id"], name: "index_transactions_on_account_id"
     t.index ["credit_card_id"], name: "index_transactions_on_credit_card_id"
   end
 
@@ -69,4 +84,5 @@ ActiveRecord::Schema.define(version: 20180402014553) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "transactions", "accounts"
 end
