@@ -30,13 +30,13 @@ class CreditCard < ApplicationRecord
   end
 
   def payments_to_payoff
+    r = interestRate / 12
+    s = balance
+    d = minimum_payment
+    rs = r * s
+    n = -(Math.log(rs/d)/Math.log(1 + r))
 
-    pp = balance / minimum_payment
-    years = pp / 12
-
-    ai = years * annual_interest
-
-    pp
+    n
   end
 
 
