@@ -33,8 +33,7 @@ class CreditCard < ApplicationRecord
     r = interestRate / 12
     s = balance
     d = minimum_payment
-    rs = r * s
-    n = -(Math.log(rs/d)/Math.log(1 + r))
+    n = -(Math.log(1 - (r * s) / d) / Math.log(1 + r))
 
     n
   end
