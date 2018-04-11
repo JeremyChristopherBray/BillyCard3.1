@@ -20,6 +20,12 @@
                 Accounts - Coming Soon!
               </div>
             <% end %>
+            <%= link_to incomes_path, class: 'mdl-navigation__link' do %>
+              <i id="tt2a" class="material-icons">attach_money</i>
+              <div class="mdl-tooltip" data-mdl-for="tt2a">
+                Income
+              </div>
+            <% end %>
             <%= link_to credit_cards_path , class: 'mdl-navigation__link'  do %>
               <i id="tt3" class="material-icons">credit_card</i>
               <div class="mdl-tooltip" data-mdl-for="tt3">
@@ -38,6 +44,10 @@
                 Account
               </div>
             <% end %>
+            <i id="tt6" class="material-icons">priority_high</i>
+            <div class="mdl-tooltip" data-mdl-for="tt6">
+              Notifications
+            </div>
           </nav>
       <% else %>
                   <!-- Title -->

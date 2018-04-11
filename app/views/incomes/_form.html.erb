@@ -1,0 +1,27 @@
+<%= form_with(model: income, local: true) do |form| %>
+  <% if income.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+      <ul>
+      <% income.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, id: :income_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :frequency %>
+    <%= form.select :frequency, options_for_select([['Weekly', '52'], ['Fortnightly', '26'], ['Monthly', '12'], ['Bi-Monthly', '6'], ['Annually', '1']]), id: :income_frequency %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

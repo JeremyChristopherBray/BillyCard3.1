@@ -1,0 +1,86 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Income</h1>
+<br>
+Annually
+<br>
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+    <tr>
+      <th>Annual Income</th>
+      <th>Superannuation</th>
+      <th>Annual Tax</th>
+      <th>Annual After Tax Income</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr>
+        <td><%= number_to_currency(income.annual_income, unit: "$") %></td>
+        <td><%= number_to_currency(income.superannuation, unit: "$") %></td>
+        <td><%= number_to_currency(income.tax, unit: "$") %></td>
+        <td><%= number_to_currency(income.annual_after_tax_income, unit: "$") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Income', new_income_path %>
+<br>
+Monthly
+<br>
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+  <tr>
+    <th>Monthly Income</th>
+    <th>Monthly Tax</th>
+    <th>Monthly Income After Tax</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @incomes.each do |income| %>
+    <tr>
+      <td><%= number_to_currency(income.monthly_income, unit: "$") %></td>
+      <td><%= number_to_currency(income.monthly_tax, unit: "$") %></td>
+      <td><%= number_to_currency(income.monthly_income_after_tax, unit: "$") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Income', new_income_path %>
+
+<br>
+
+Weekly
+<br>
+
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+  <tr>
+    <th>Weekly Income:</th>
+    <th>Weekly tax</th>
+    <th>Weekly Income After Tax</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @incomes.each do |income| %>
+    <tr>
+      <td><%= number_to_currency(income.weekly_income, unit: "$") %></td>
+      <td><%= number_to_currency(income.weekly_tax, unit: "$") %></td>
+      <td><%= number_to_currency(income.weekly__income_after_tax, unit: "$") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Income', new_income_path %>

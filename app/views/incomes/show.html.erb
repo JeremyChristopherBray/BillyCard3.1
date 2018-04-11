@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Annual Income:</strong>
+  <%= number_to_currency(@income.annual_income, unit: "$") %>
+</p>
+
+<p>
+  <strong>Superannuation:</strong>
+  <%= number_to_currency(@income.superannuation, unit: "$") %>
+</p>
+<p>
+  <strong>Annual Tax:</strong>
+  <%= number_to_currency(@income.tax, unit: "$") %>
+</p>
+
+<p>
+  <strong>Annual After Tax Income:</strong>
+  <%= number_to_currency(@income.annual_after_tax_income, unit: "$") %>
+</p>
+
+<p>
+  <strong>Monthly Income:</strong>
+  <%= number_to_currency(@income.monthly_income, unit: "$") %>
+</p>
+<p>
+  <strong>Monthly Tax:</strong>
+  <%= number_to_currency(@income.monthly_tax, unit: "$") %>
+</p>
+<p>
+  <strong>Monthly Income After Tax:</strong>
+  <%= number_to_currency(@income.monthly_income_after_tax, unit: "$") %>
+</p>
+<p>
+  <strong>Weekly Income:</strong>
+  <%= number_to_currency(@income.weekly_income, unit: "$") %>
+</p>
+<p>
+  <strong>Weekly tax:</strong>
+  <%= number_to_currency(@income.weekly_tax, unit: "$") %>
+</p>
+<p>
+  <strong>Weekly Income After Tax:</strong>
+  <%= number_to_currency(@income.weekly__income_after_tax, unit: "$") %>
+</p>
+
+<%= link_to 'Edit', edit_income_path(@income) %> |
+<%= link_to 'Back', incomes_path %>
