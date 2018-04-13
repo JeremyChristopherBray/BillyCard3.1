@@ -5,6 +5,8 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @expenses = current_user.expenses
+    @monthly_subs = monthly_subs
+    @total_monthly_payment = total_monthly_payment
     @total_monthly_expense = total_monthly_expenses
   end
 

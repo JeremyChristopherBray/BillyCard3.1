@@ -43,11 +43,21 @@ Monthly
       <td><%= number_to_currency(expense.monthly_expense, unit: "$") %></td>
     </tr>
   <% end %>
+    <tr>
+      <td> Credit Card Payments </td>
+      <td><%= number_to_currency(@total_monthly_payment, unit: "$") %></td>
+    </tr>
+    <tr>
+      <td> Subscription Payments</td>
+      <td><%= number_to_currency(@monthly_subs, unit: "$") %></td>
+    </tr>
   </tbody>
-  <tr>
-    <td></td>
-    <td><%= number_to_currency(@total_monthly_expense, unit: "$") %></td>
-
+  <tfoot>
+    <tr>
+      <td></td>
+      <td><%= number_to_currency(@total_monthly_expense, unit: "$") %></td>
+    </tr>
+  </tfoot>
 </table>
 
 <br>
