@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Expenses</h1>
+
+Annually
+<br>
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @expenses.each do |expense| %>
+    <tr>
+      <td><%= expense.name %></td>
+      <td><%= number_to_currency(expense.annual_expense, unit: "$") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expense', new_expense_path %>
+<br>
+Monthly
+<br>
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @expenses.each do |expense| %>
+    <tr>
+      <td><%= expense.name %></td>
+      <td><%= number_to_currency(expense.monthly_expense, unit: "$") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  <tr>
+    <td></td>
+    <td><%= number_to_currency(@total_monthly_expense, unit: "$") %></td>
+
+</table>
+
+<br>
+
+<%= link_to 'New Expense', new_expense_path %>
+
+<br>
+
+Weekly
+<br>
+
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @expenses.each do |expense| %>
+    <tr>
+      <td><%= expense.name %></td>
+      <td><%= number_to_currency(expense.weekly_expense, unit: "$") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expense', new_expense_path %>

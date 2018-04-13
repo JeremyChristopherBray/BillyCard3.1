@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :accounts
   has_many :credit_cards
   has_many :subs
+  has_many :expenses
+  has_many :incomes
 end

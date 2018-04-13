@@ -26,6 +26,12 @@
                 Income
               </div>
             <% end %>
+            <%= link_to expenses_path, class: 'mdl-navigation__link' do %>
+              <i id="tt2b" class="material-icons">money_off</i>
+              <div class="mdl-tooltip" data-mdl-for="tt2b">
+                Expenses
+              </div>
+            <% end %>
             <%= link_to credit_cards_path , class: 'mdl-navigation__link'  do %>
               <i id="tt3" class="material-icons">credit_card</i>
               <div class="mdl-tooltip" data-mdl-for="tt3">

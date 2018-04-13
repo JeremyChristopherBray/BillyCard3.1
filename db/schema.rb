@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411075331) do
+ActiveRecord::Schema.define(version: 20180413052931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,11 +40,23 @@ ActiveRecord::Schema.define(version: 20180411075331) do
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
+  create_table "expenses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid "user_id"
+    t.integer "frequency"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
+  end
+
   create_table "incomes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.decimal "amount"
     t.integer "frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "user_id"
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "subs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

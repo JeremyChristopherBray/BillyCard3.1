@@ -4,6 +4,17 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
+  def monthly_subs
+    current_user.subs.sum(:amount)
+  end
+
+  def total_monthly_expenses
+
+    n = current_user.expenses.sum(:amount) + monthly_subs + total_monthly_payment
+
+    n
+  end
+
   def minimum_payment
     n = balance / 100
     b = n * 1

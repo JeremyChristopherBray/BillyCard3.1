@@ -1,4 +1,6 @@
 class Income < ApplicationRecord
+  belongs_to :user
+
   def annual_income
     self.amount * self.frequency
   end
