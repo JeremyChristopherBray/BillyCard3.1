@@ -5,9 +5,15 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @expenses = current_user.expenses
+    @weekly_subs = weekly_subs
     @monthly_subs = monthly_subs
+    @annual_subs = annual_subs
+    @weekly_cc = weekly_cc_payment
+    @annual_cc = annual_cc_payment
     @total_monthly_payment = total_monthly_payment
     @total_monthly_expense = total_monthly_expenses
+    @total_annual_expenses = total_annual_expenses
+    @total_weekly_expenses = total_weekly_expenses
   end
 
   # GET /expenses/1

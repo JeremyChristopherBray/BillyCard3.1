@@ -2,85 +2,101 @@
 
 <h1>Income</h1>
 <br>
-Annually
-<br>
-<table class="mdl-data-table mdl-js-data-table">
-  <thead>
-    <tr>
-      <th>Annual Income</th>
-      <th>Superannuation</th>
-      <th>Annual Tax</th>
-      <th>Annual After Tax Income</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @incomes.each do |income| %>
+<div class="mdl-tabs mdl-js-tabs">
+  <div class="mdl-tabs__tab-bar">
+    <a href="#tab1-panel" class="mdl-tabs__tab is-active">Weekly</a>
+    <a href="#tab2-panel" class="mdl-tabs__tab">Monthly</a>
+    <a href="#tab3-panel" class="mdl-tabs__tab">Annually</a>
+  </div>
+  <div class="mdl-tabs__panel is-active" id="tab1-panel">
+
+    <h3>Weekly</h3>
+    <br>
+
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
       <tr>
-        <td><%= number_to_currency(income.annual_income, unit: "$") %></td>
-        <td><%= number_to_currency(income.superannuation, unit: "$") %></td>
-        <td><%= number_to_currency(income.tax, unit: "$") %></td>
-        <td><%= number_to_currency(income.annual_after_tax_income, unit: "$") %></td>
+        <th>Weekly Income:</th>
+        <th>Weekly tax</th>
+        <th>Weekly Income After Tax</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @incomes.each do |income| %>
+        <tr>
+          <td><%= number_to_currency(income.weekly_income, unit: "$") %></td>
+          <td><%= number_to_currency(income.weekly_tax, unit: "$") %></td>
+          <td><%= number_to_currency(income.weekly__income_after_tax, unit: "$") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Income', new_income_path %>
-<br>
-Monthly
-<br>
-<table class="mdl-data-table mdl-js-data-table">
-  <thead>
-  <tr>
-    <th>Monthly Income</th>
-    <th>Monthly Tax</th>
-    <th>Monthly Income After Tax</th>
-  </tr>
-  </thead>
+    <br>
 
-  <tbody>
-  <% @incomes.each do |income| %>
-    <tr>
-      <td><%= number_to_currency(income.monthly_income, unit: "$") %></td>
-      <td><%= number_to_currency(income.monthly_tax, unit: "$") %></td>
-      <td><%= number_to_currency(income.monthly_income_after_tax, unit: "$") %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    <%= link_to 'New Income', new_income_path %>
+  </div>
 
-<br>
+  <div class="mdl-tabs__panel" id="tab2-panel">
+    <h3>Monthly</h3>
+    <br>
+    <br>
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
+      <tr>
+        <th>Monthly Income</th>
+        <th>Monthly Tax</th>
+        <th>Monthly Income After Tax</th>
+      </tr>
+      </thead>
 
-<%= link_to 'New Income', new_income_path %>
+      <tbody>
+      <% @incomes.each do |income| %>
+        <tr>
+          <td><%= number_to_currency(income.monthly_income, unit: "$") %></td>
+          <td><%= number_to_currency(income.monthly_tax, unit: "$") %></td>
+          <td><%= number_to_currency(income.monthly_income_after_tax, unit: "$") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <br>
 
-Weekly
-<br>
+    <%= link_to 'New Income', new_income_path %>
+  </div>
 
-<table class="mdl-data-table mdl-js-data-table">
-  <thead>
-  <tr>
-    <th>Weekly Income:</th>
-    <th>Weekly tax</th>
-    <th>Weekly Income After Tax</th>
-  </tr>
-  </thead>
+  <div class="mdl-tabs__panel" id="tab3-panel">
+    <h3>Annually</h3>
+    <br>
+    <br>
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
+      <tr>
+        <th>Annual Income</th>
+        <th>Superannuation</th>
+        <th>Annual Tax</th>
+        <th>Annual After Tax Income</th>
+      </tr>
+      </thead>
 
-  <tbody>
-  <% @incomes.each do |income| %>
-    <tr>
-      <td><%= number_to_currency(income.weekly_income, unit: "$") %></td>
-      <td><%= number_to_currency(income.weekly_tax, unit: "$") %></td>
-      <td><%= number_to_currency(income.weekly__income_after_tax, unit: "$") %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+      <tbody>
+      <% @incomes.each do |income| %>
+        <tr>
+          <td><%= number_to_currency(income.annual_income, unit: "$") %></td>
+          <td><%= number_to_currency(income.superannuation, unit: "$") %></td>
+          <td><%= number_to_currency(income.tax, unit: "$") %></td>
+          <td><%= number_to_currency(income.annual_after_tax_income, unit: "$") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <br>
 
-<%= link_to 'New Income', new_income_path %>
+    <%= link_to 'New Income', new_income_path %>
+    <br>
+  </div>
+</div>

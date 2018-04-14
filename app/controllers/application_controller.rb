@@ -7,36 +7,63 @@ class ApplicationController < ActionController::Base
   def monthly_subs
     current_user.subs.sum(:amount)
   end
+  helper_method 'monthly_subs'
+
+  def annual_subs
+    monthly_subs * 12
+  end
+
+  def weekly_subs
+    monthly_subs / 4
+  end
 
   def total_monthly_expenses
-
     n = current_user.expenses.sum(:amount) + monthly_subs + total_monthly_payment
-
     n
   end
+  helper_method 'total_monthly_expenses'
+
+  def total_weekly_expenses
+    i = current_user.expenses.sum(:amount)
+    p = i / 4
+    n = p + weekly_subs + weekly_cc_payment
+    n
+  end
+  helper_method 'total_weekly_expenses'
+
+  def total_annual_expenses
+    i = current_user.expenses.sum(:amount)
+    p = i * 12
+    n = p + annual_subs + annual_cc_payment
+    n
+  end
+  helper_method 'total_annual_expenses'
 
   def minimum_payment
     n = balance / 100
     b = n * 1
     i = balance * interestRate
     c = i / 12
-
     c + b
   end
   helper_method 'minimum_payment'
 
   def total_monthly_payment
-
     n = current_user.credit_cards.sum(&:minimum_payment)
-
     n
   end
   helper_method 'total_monthly_payment'
 
+  def weekly_cc_payment
+    total_monthly_payment / 4
+  end
+
+  def annual_cc_payment
+    total_monthly_payment * 12
+  end
+
   def subs_total_monthly_payment
-
     n = current_user.subs.sum(&:amount)
-
     n
   end
   helper_method 'subs_total_monthly_payment'
