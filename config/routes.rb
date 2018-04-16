@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :payments
   resources :subs
   get 'pages/home'
+  get 'pages/dashboard'
 
   resources :credit_cards
   resources :users, only: [:show]

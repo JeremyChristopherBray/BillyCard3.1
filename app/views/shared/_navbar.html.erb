@@ -8,13 +8,13 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <%= link_to '' , class: 'mdl-navigation__link'  do %>
+            <%= link_to pages_dashboard_url, class: 'mdl-navigation__link'  do %>
               <i id="tt1" class="material-icons">dashboard</i>
               <div class="mdl-tooltip" data-mdl-for="tt1">
-                Dashboard - Coming Soon!
+                Dashboard
               </div>
             <% end %>
-            <%= link_to accounts_path , class: 'mdl-navigation__link'  do %>
+            <%= link_to accounts_path, class: 'mdl-navigation__link'  do %>
               <i id="tt2" class="material-icons">account_balance</i>
               <div class="mdl-tooltip" data-mdl-for="tt2">
                 Accounts - Coming Soon!

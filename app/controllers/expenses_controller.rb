@@ -23,7 +23,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = current_user.expenses.new
+    @expense = current_user.expenses.build
   end
 
   # GET /expenses/1/edit

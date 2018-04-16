@@ -48,6 +48,7 @@ class Income < ApplicationRecord
   def monthly_income_after_tax
     monthly_income - monthly_tax
   end
+
   def weekly__income_after_tax
     weekly_income - weekly_tax
   end
