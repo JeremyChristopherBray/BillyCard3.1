@@ -14,11 +14,13 @@
                 Dashboard
               </div>
             <% end %>
-            <%= link_to accounts_path, class: 'mdl-navigation__link'  do %>
-              <i id="tt2" class="material-icons">account_balance</i>
-              <div class="mdl-tooltip" data-mdl-for="tt2">
-                Accounts - Coming Soon!
-              </div>
+            <% if false %>
+              <%= link_to accounts_path, class: 'mdl-navigation__link'  do %>
+                <i id="tt2" class="material-icons">account_balance</i>
+                <div class="mdl-tooltip" data-mdl-for="tt2">
+                  Accounts - Coming Soon!
+                </div>
+              <% end %>
             <% end %>
             <%= link_to incomes_path, class: 'mdl-navigation__link' do %>
               <i id="tt2a" class="material-icons">attach_money</i>

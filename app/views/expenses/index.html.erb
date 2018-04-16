@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
 
 <h1>Expenses</h1>
+
+  <% if current_user.expenses.any? %>
 <div class = "mdl-tabs mdl-js-tabs">
   <div class = "mdl-tabs__tab-bar">
     <a href="#tab1-panel" class="mdl-tabs__tab is-active">Weekly</a>
@@ -132,3 +134,11 @@
     <br>
   </div>
 </div>
+  <% else %>
+    You have no Expenses, better
+    <%= link_to new_expenses_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
+      <i class="material-icons">add</i>
+    <% end %>
+    one.
+  <% end %>
+<% end %>
