@@ -4,11 +4,12 @@
   <% if current_user.incomes.any? %>
 <div class="mdl-tabs mdl-js-tabs">
   <div class="mdl-tabs__tab-bar">
-    <a href="#tab1-panel" class="mdl-tabs__tab is-active">Weekly</a>
+    <a href="#tab1-panel" class="mdl-tabs__tab">Weekly</a>
+    <a href="#tab2a-panel" class="mdl-tabs__tab is-active">Fortnightly</a>
     <a href="#tab2-panel" class="mdl-tabs__tab">Monthly</a>
     <a href="#tab3-panel" class="mdl-tabs__tab">Annually</a>
   </div>
-  <div class="mdl-tabs__panel is-active" id="tab1-panel">
+  <div class="mdl-tabs__panel " id="tab1-panel">
 
     <h3>Weekly</h3>
     <br>
@@ -16,20 +17,90 @@
     <table class="mdl-data-table mdl-js-data-table">
       <thead>
       <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>From</th>
         <th>Weekly Income:</th>
         <th>Weekly tax</th>
         <th>Weekly Income After Tax</th>
+        <th></th>
       </tr>
       </thead>
 
       <tbody>
       <% @incomes.each do |income| %>
         <tr>
+          <td><%= link_to income.name, edit_income_path(income) %></td>
+          <td><%= income.incomeType %></td>
+          <td><%= income.payer %></td>
           <td><%= number_to_currency(income.weekly_income, unit: "$") %></td>
           <td><%= number_to_currency(income.weekly_tax, unit: "$") %></td>
           <td><%= number_to_currency(income.weekly__income_after_tax, unit: "$") %></td>
+          <td><%= link_to income, method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="material-icons">delete_forever</i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= number_to_currency(@total_weekly_income, unit: "$") %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Income', new_income_path %>
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="tab2a-panel">
+
+    <h3>Fortnightly</h3>
+    <br>
+
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>From</th>
+        <th>Weekly Income:</th>
+        <th>Weekly tax</th>
+        <th>Weekly Income After Tax</th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @incomes.each do |income| %>
+        <tr>
+          <td><%= link_to income.name, edit_income_path(income) %></td>
+          <td><%= income.incomeType %></td>
+          <td><%= income.payer %></td>
+          <td><%= number_to_currency(income.fortnightly_income, unit: "$") %></td>
+          <td><%= number_to_currency(income.fortnightly_tax, unit: "$") %></td>
+          <td><%= number_to_currency(income.fortnightly_income_after_tax, unit: "$") %></td>
+          <td><%= link_to income, method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="material-icons">delete_forever</i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= number_to_currency(@total_fortnightly_income, unit: "$") %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
       </tbody>
     </table>
 
@@ -45,20 +116,40 @@
     <table class="mdl-data-table mdl-js-data-table">
       <thead>
       <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>From</th>
         <th>Monthly Income</th>
         <th>Monthly Tax</th>
         <th>Monthly Income After Tax</th>
+        <th></th>
       </tr>
       </thead>
 
       <tbody>
       <% @incomes.each do |income| %>
         <tr>
+          <td><%= link_to income.name, edit_income_path(income) %></td>
+          <td><%= income.incomeType %></td>
+          <td><%= income.payer %></td>
           <td><%= number_to_currency(income.monthly_income, unit: "$") %></td>
           <td><%= number_to_currency(income.monthly_tax, unit: "$") %></td>
           <td><%= number_to_currency(income.monthly_income_after_tax, unit: "$") %></td>
+          <td><%= link_to income, method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="material-icons">delete_forever</i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= number_to_currency(@total_monthly_income, unit: "$") %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
       </tbody>
     </table>
 
@@ -74,22 +165,43 @@
     <table class="mdl-data-table mdl-js-data-table">
       <thead>
       <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>From</th>
         <th>Annual Income</th>
         <th>Superannuation</th>
         <th>Annual Tax</th>
         <th>Annual After Tax Income</th>
+        <th></th>
       </tr>
       </thead>
 
       <tbody>
       <% @incomes.each do |income| %>
         <tr>
+          <td><%= link_to income.name, edit_income_path(income) %></td>
+          <td><%= income.incomeType %></td>
+          <td><%= income.payer %></td>
           <td><%= number_to_currency(income.annual_income, unit: "$") %></td>
           <td><%= number_to_currency(income.superannuation, unit: "$") %></td>
           <td><%= number_to_currency(income.tax, unit: "$") %></td>
           <td><%= number_to_currency(income.annual_after_tax_income, unit: "$") %></td>
+          <td><%= link_to income,  method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="material-icons">delete_forever</i>
+          <% end %>
+          </td>
         </tr>
       <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= number_to_currency(@total_annual_income, unit: "$") %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
       </tbody>
     </table>
 

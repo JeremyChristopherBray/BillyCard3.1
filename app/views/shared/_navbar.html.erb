@@ -3,7 +3,7 @@
     <div class="mdl-layout__header-row">
       <% if user_signed_in? %>
             <!-- Title -->
-            <%= link_to 'BillyCard', root_path, class: 'mdl-layout-title' %>
+        <%= link_to '<i class="material-icons">credit_card</i> BillyCard'.html_safe, root_path, class: 'mdl-layout-title' %>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -59,7 +59,7 @@
           </nav>
       <% else %>
                   <!-- Title -->
-                  <%= link_to 'BillyCard', root_path, class: 'mdl-layout-title' %>
+        <%= link_to '<i class="material-icons">credit_card</i> BillyCard'.html_safe, root_path, class: 'mdl-layout-title' %>
                   <!-- Add spacer, to align navigation to the right -->
                   <div class="mdl-layout-spacer"></div>
                   <!-- Navigation. We hide it in small screens. -->
@@ -79,7 +79,7 @@
     </ul>
   </header>
   <div class="mdl-layout__drawer">
-    <%= link_to 'BillyCard', root_path, class: 'mdl-layout-title' %>
+    <%= link_to '<i class="material-icons">credit_card</i> BillyCard'.html_safe, root_path, class: 'mdl-layout-title' %>
     <nav class="mdl-navigation">
       <% if user_signed_in? %>
         <% if response.code.to_i != 404 %>

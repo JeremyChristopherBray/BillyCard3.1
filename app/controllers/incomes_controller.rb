@@ -5,6 +5,10 @@ class IncomesController < ApplicationController
   # GET /incomes.json
   def index
     @incomes = current_user.incomes.all
+    @total_weekly_income = current_user.incomes.sum(:amount) / 52
+    @total_fortnightly_income = current_user.incomes.sum(:amount) / 26
+    @total_monthly_income = current_user.incomes.sum(:amount) / 12
+    @total_annual_income = current_user.incomes.sum(:amount)
   end
 
   # GET /incomes/1
@@ -69,6 +73,6 @@ class IncomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:amount, :frequency, :user_id)
+      params.require(:income).permit(:name, :payer, :amount, :frequency, :user_id, :incomeType, :country, :taxed, :super)
     end
 end

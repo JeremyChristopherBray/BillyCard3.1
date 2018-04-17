@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :income_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payer %>
+    <%= form.text_field :payer, id: :income_payer %>
+  </div>
+
+  <div class="field">
     <%= form.label :amount %>
     <%= form.text_field :amount, id: :income_amount %>
   </div>
@@ -20,7 +30,18 @@
     <%= form.label :frequency %>
     <%= form.select :frequency, options_for_select([['Weekly', '52'], ['Fortnightly', '26'], ['Monthly', '12'], ['Bi-Monthly', '6'], ['Annually', '1']]), id: :income_frequency %>
   </div>
-
+  <div class="field">
+    <%= form.label :incomeType %>
+    <%= form.select :incomeType, options_for_select([['Income', 'income'], ['Allowance', 'allowance']]), id: :income_incomeType %>
+  </div>
+  <div class="field">
+    <%= form.label :taxable %>
+    <%= form.check_box :taxable, id: :income_taxable %>
+  </div>
+  <div class="field">
+    <%= form.label :super %>
+    <%= form.check_box :super, id: :income_super %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
