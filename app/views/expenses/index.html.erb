@@ -35,12 +35,14 @@
         </tr>
       <% end %>
       <tr>
-        <td> Credit Card Payments</td>
+        <td> <%= link_to 'Card Payments', credit_cards_path %></td>
         <td><%= number_to_currency(@weekly_cc, unit: "$") %></td>
+        <td></td>
       </tr>
       <tr>
-        <td> Subscription Payments</td>
+        <td><%= link_to 'Subscription Payments', subs_path %></td>
         <td><%= number_to_currency(@weekly_subs, unit: "$") %></td>
+        <td></td>
       </tr>
       </tbody>
       <tfoot>
