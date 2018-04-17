@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1938469c-749f-4541-bd7e-c575598f45fd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/incomes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/incomes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/income.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/income.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/incomes/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/incomes/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/incomes/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/incomes/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -369,18 +363,17 @@
       <workItem from="1523431858871" duration="32508000" />
       <workItem from="1523855988130" duration="9923000" />
       <workItem from="1523933588374" duration="74000" />
-      <workItem from="1523933865950" duration="3870000" />
+      <workItem from="1523933865950" duration="4403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112221000" />
+    <option name="totallyTimeSpent" value="112754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31330472" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31330472" />
       <window_info anchor="bottom" id="TODO" order="8" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -389,7 +382,7 @@
       <window_info anchor="bottom" id="Run" order="4" weight="0.32799014" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.20822942" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.20822942" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
