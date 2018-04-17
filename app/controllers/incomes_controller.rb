@@ -9,6 +9,11 @@ class IncomesController < ApplicationController
     @total_fortnightly_income = current_user.incomes.sum(:amount) / 26
     @total_monthly_income = current_user.incomes.sum(:amount) / 12
     @total_annual_income = current_user.incomes.sum(:amount)
+    @total_weekly_income_after_tax = annual_income_minus_tax / 52
+    @total_fortnightly_income_after_tax = annual_income_minus_tax / 26
+    @total_monthly_income_after_tax = annual_income_minus_tax / 12
+    @total_annual_income_after_tax = annual_income_minus_tax
+
   end
 
   # GET /incomes/1

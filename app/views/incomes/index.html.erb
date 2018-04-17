@@ -48,7 +48,7 @@
         <td></td>
         <td><%= number_to_currency(@total_weekly_income, unit: "$") %></td>
         <td></td>
-        <td></td>
+        <td><%= number_to_currency(@total_weekly_income_after_tax, unit: "$") %></td>
         <td></td>
       </tr>
       </tbody>
@@ -98,7 +98,7 @@
         <td></td>
         <td><%= number_to_currency(@total_fortnightly_income, unit: "$") %></td>
         <td></td>
-        <td></td>
+        <td><%= number_to_currency(@total_fortnightly_income_after_tax, unit: "$") %></td>
         <td></td>
       </tr>
       </tbody>
@@ -147,7 +147,7 @@
         <td></td>
         <td><%= number_to_currency(@total_monthly_income, unit: "$") %></td>
         <td></td>
-        <td></td>
+        <td><%= number_to_currency(@total_monthly_income_after_tax, unit: "$") %></td>
         <td></td>
       </tr>
       </tbody>
@@ -199,7 +199,7 @@
         <td><%= number_to_currency(@total_annual_income, unit: "$") %></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td><%= number_to_currency(@total_annual_income_after_tax, unit: "$") %></td>
         <td></td>
       </tr>
       </tbody>
