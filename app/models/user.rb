@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :subs
   has_many :expenses
   has_many :incomes
+  has_many :loans
 end

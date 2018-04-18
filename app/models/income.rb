@@ -5,7 +5,7 @@ class Income < ApplicationRecord
   belongs_to :user
 
   def annual_income
-    amount
+    amount * frequency
   end
   def monthly_income
     annual_income / 12
@@ -29,6 +29,7 @@ class Income < ApplicationRecord
         i = annual_income - 37000
         p = 0.325 * i
         3572 + p
+        puts 2
       when 87001 .. 180000
         i = annual_income - 87000
         p = 0.37 * i

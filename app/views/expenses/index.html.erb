@@ -35,6 +35,11 @@
         </tr>
       <% end %>
       <tr>
+        <td> <%= link_to 'Loan Repayments', loans_path %></td>
+        <td><%= number_to_currency(@weekly_cc, unit: "$") %></td>
+        <td></td>
+      </tr>
+      <tr>
         <td> <%= link_to 'Card Payments', credit_cards_path %></td>
         <td><%= number_to_currency(@weekly_cc, unit: "$") %></td>
         <td></td>

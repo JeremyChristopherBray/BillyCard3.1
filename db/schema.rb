@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417024046) do
+ActiveRecord::Schema.define(version: 20180417232204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,18 @@ ActiveRecord::Schema.define(version: 20180417024046) do
     t.boolean "taxable", default: true
     t.boolean "super", default: true
     t.index ["user_id"], name: "index_incomes_on_user_id"
+  end
+
+  create_table "loans", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "lengthInMonths"
+    t.decimal "repayment"
+    t.integer "amount"
+    t.uuid "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_loans_on_user_id"
   end
 
   create_table "subs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
