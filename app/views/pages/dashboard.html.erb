@@ -7,6 +7,53 @@
         <a href="#tab3-panel" class="mdl-tabs__tab">Annually</a>
       </div>
       <div class="mdl-tabs__panel" id="tab1-panel">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Weekly Income</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <%= number_to_currency(@weekly_income, unit: "$") %>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  View Income
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Weekly Expenses</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <%= number_to_currency(@weekly_expenses, unit: "$") %>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  View Expenses
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Funds After Expenses</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <%= number_to_currency(@weekly_leftovers, unit: "$") %>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  View Updates
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="mdl-tabs__panel is-active" id="tab2-panel">
         <div class="mdl-grid">
@@ -16,7 +63,7 @@
                 <h2 class="mdl-card__title-text">Income</h2>
               </div>
               <div class="mdl-card__supporting-text">
-                <%= number_to_currency(@income, unit: "$") %>
+                <%= number_to_currency(@monthly_income, unit: "$") %>
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -31,7 +78,7 @@
                 <h2 class="mdl-card__title-text">Expenses</h2>
               </div>
               <div class="mdl-card__supporting-text">
-                <%= number_to_currency(@total_monthly_expense, unit: "$") %>
+                <%= number_to_currency(@monthly_expenses, unit: "$") %>
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -58,6 +105,53 @@
         </div>
       </div>
       <div class="mdl-tabs__panel" id="tab3-panel">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Income</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <%= number_to_currency(@annual_income, unit: "$") %>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  View Income
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Expenses</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <%= number_to_currency(@annual_expenses, unit: "$") %>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  View Expenses
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Total</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <%= number_to_currency(@annual_leftovers, unit: "$") %>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  View Updates
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
       </div>
     </div>
 </div>
