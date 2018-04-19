@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1938469c-749f-4541-bd7e-c575598f45fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/loans_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/loans_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/expenses/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/loans/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/loans/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +23,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -130,7 +133,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20180417024046_add_superannuation_to_income.rb" />
         <option value="$PROJECT_DIR$/app/views/incomes/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/incomes_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20180417232204_create_loans.rb" />
         <option value="$PROJECT_DIR$/app/models/loan.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
@@ -143,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/views/expenses/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
       </list>
     </option>
   </component>
@@ -173,12 +176,6 @@
               <item name="BillyCardV3.1" type="b2602c69:ProjectViewProjectNode" />
               <item name="BillyCardV3.1" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BillyCardV3.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BillyCardV3.1" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BillyCardV3.1" type="b2602c69:ProjectViewProjectNode" />
@@ -351,12 +348,12 @@
       <workItem from="1523431858871" duration="32508000" />
       <workItem from="1523855988130" duration="9923000" />
       <workItem from="1523933588374" duration="74000" />
-      <workItem from="1523933865950" duration="14467000" />
+      <workItem from="1523933865950" duration="15709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122818000" />
+    <option name="totallyTimeSpent" value="124060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -636,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180413052931_add_user_to_expenses.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -748,6 +738,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
         </state>
       </provider>
     </entry>
