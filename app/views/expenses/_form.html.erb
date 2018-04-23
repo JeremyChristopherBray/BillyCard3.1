@@ -23,7 +23,12 @@
 
   <div class="field">
     <%= form.label :frequency %>
-    <%= form.select :frequency, options_for_select([['Weekly', '52'], ['Fortnightly', '26'], ['Monthly', '12'], ['Bi-Monthly', '6'], ['Annually', '1']]), id: :income_frequency %>
+    <%= form.select :frequency, options_for_select([['One Off', '1'], ['Weekly', '52'], ['Fortnightly', '26'], ['Monthly', '12'], ['Bi-Monthly', '6'], ['Annually', '1']]), id: :income_frequency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expense_category %>
+    <%= form.collection_select :expense_category, ExpenseCategory.all, :id, :name %>
   </div>
 
   <div class="actions">

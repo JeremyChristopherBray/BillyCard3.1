@@ -2,46 +2,120 @@
 
 <h1>Subscriptions</h1>
 <% if current_user.subs.any? %>
-<table class="mdl-data-table mdl-js-data-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Frequency</th>
-      <th>Amount</th>
-      <th>Annual Cost</th>
-    </tr>
-  </thead>
+  <div class="mdl-tabs mdl-js-tabs">
+    <div class="mdl-tabs__tab-bar">
+      <a href="#tab1-panel" class="mdl-tabs__tab is-active">Active</a>
+      <a href="#tab2-panel" class="mdl-tabs__tab">Archived</a>
+    </div>
+    <div class="mdl-tabs__panel is-active" id="tab1-panel">
+      <table class="mdl-data-table mdl-js-data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Frequency</th>
+            <th>Amount</th>
+            <th>Annual Cost</th>
+            <th></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @subs.each do |sub| %>
-      <tr>
-        <td><%= link_to sub.name, sub %></td>
-        <td><%= sub.description %></td>
-        <td><%= sub.frequency %></td>
-        <td><%= number_to_currency(sub.amount, unit: "$") %></td>
-        <td><%= number_to_currency(sub.annual_cost, unit: "$") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-  <tfoot>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><%= number_to_currency(@monthly_subs, unit: "$") %></td>
-    <td><%= number_to_currency(@total_annual_subs, unit: "$") %></td>
-  </tr>
-  </tfoot>
-</table>
+        <tbody>
+          <% @subs.each do |sub| %>
+            <tr>
+              <td><%= link_to sub.name, sub %></td>
+              <td><%= sub.description %></td>
+              <td><%= sub.frequency %></td>
+              <td><%= number_to_currency(sub.amount, unit: "$") %></td>
+              <td><%= number_to_currency(sub.annual_cost, unit: "$") %></td>
+              <td>
+                <% if sub.archive? %>
+                  <%= form_for sub do |f | %>
+                <%= f.hidden_field :archive, value: false %>
+                <%= f.submit 'Archive' %>
+                <% end %>
+                <% else %>
+                <%= form_for sub do |f|  %>
+                    <%= f.hidden_field :archive, value: true %>
+                    <%= f.submit 'Activate' %>
+                  <% end %>
+                <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><%= number_to_currency(@monthly_subs, unit: "$") %></td>
+          <td><%= number_to_currency(@total_annual_subs, unit: "$") %></td>
+          <td></td>
+        </tr>
+        </tfoot>
+      </table>
 
-<br>
+      <br>
 
-<%= link_to 'New Subscription', new_sub_path %>
-<% else %>
-  You have no Subscriptions, better
-  <%= link_to new_sub_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
-    <i class="material-icons">add</i>
-    <% end %>
-  one.
-<% end %>
+      <%= link_to 'New Subscription', new_sub_path %>
+    </div>
+    <div class="mdl-tabs__panel" id="tab2-panel">
+      <table class="mdl-data-table mdl-js-data-table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Frequency</th>
+          <th>Amount</th>
+          <th>Annual Cost</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @archived_subs.each do |sub| %>
+          <tr>
+            <td><%= link_to sub.name, sub %></td>
+            <td><%= sub.description %></td>
+            <td><%= sub.frequency %></td>
+            <td><%= number_to_currency(sub.amount, unit: "$") %></td>
+            <td><%= number_to_currency(sub.annual_cost, unit: "$") %></td>
+            <td>
+              <% if sub.archive? %>
+                <%= form_for sub do |f| %>
+                  <%= f.hidden_field :archive, value: false %>
+                  <%= f.submit 'Archive' %>
+                <% end %>
+              <% else %>
+                <%= form_for sub do |f| %>
+                  <%= f.hidden_field :archive, value: true %>
+                  <%= f.submit 'Activate' %>
+                <% end %>
+              <% end %></td>
+          </tr>
+        <% end %>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tfoot>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Subscription', new_sub_path %>
+    </div>
+  </div>
+      <% else %>
+        You have no Subscriptions, better
+        <%= link_to new_sub_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored' do %>
+          <i class="material-icons">add</i>
+          <% end %>
+        one.
+      <% end %>

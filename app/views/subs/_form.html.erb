@@ -25,7 +25,7 @@
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
     <%= form.label :frequency, class: 'mdl-textfield__label' %>
-    <%= form.select :frequency, options_for_select([['Select One',''], 'Weekly', 'Fortnightly', 'Monthly', 'Bi-Monthly', 'Quarterly', 'Annual']), class: 'mdl-menu mdl-menu--bottom-left mdl-js-menu'
+    <%= form.select :frequency, options_for_select([['Select One',''], ['Weekly', 52] , ['Fortnightly', 26], ['Monthly', 12], ['BiMonthly', 6 ], ['Quarterly', 4], ['Annual', 1]]), class: 'mdl-menu mdl-menu--bottom-left mdl-js-menu'
     %>
   </div>
 
@@ -33,6 +33,10 @@
     <%= form.label :amount, class: 'mdl-textfield__label' %>
     <%= form.text_field :amount, id: :sub_amount, class: 'mdl-textfield__input' %>
     <span class="spin"></span>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= form.label :archive %><br>
+    <%= form.check_box :archive, id: :sub_archive %>
   </div>
 
   <div class="actions">

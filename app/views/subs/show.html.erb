@@ -11,11 +11,6 @@
 </p>
 
 <p>
-  <strong>Frequency:</strong>
-  <%= @sub.frequency %>
-</p>
-
-<p>
   <strong>Amount:</strong>
   <%= @sub.amount %>
 </p>
@@ -23,6 +18,11 @@
 <p>
   <strong>Frequency:</strong>
   <%= @sub.frequency %>
+</p>
+
+<p>
+  <strong>Archived:</strong>
+  <%= @sub.archive %>
 </p>
 
 <%= link_to 'Edit', edit_sub_path(@sub) %> |

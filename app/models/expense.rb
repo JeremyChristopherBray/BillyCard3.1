@@ -1,5 +1,6 @@
 class Expense < ApplicationRecord
   belongs_to :user
+  belongs_to :expense_category
 
   def annual_expense
     self.amount * self.frequency

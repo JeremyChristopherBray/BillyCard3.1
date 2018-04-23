@@ -5,7 +5,8 @@ class SubsController < ApplicationController
   # GET /subs
   # GET /subs.json
   def index
-    @subs = current_user.subs.all
+    @subs = current_user.subs.where(archive: false)
+    @archived_subs = current_user.subs.where.not(archive: false)
     @monthly_subs = monthly_subs
     @total_annual_subs = @monthly_subs * 12
   end
@@ -54,6 +55,10 @@ class SubsController < ApplicationController
     end
   end
 
+  def archive
+    @sub = Sub.find(params[:id])
+  end
+
   # DELETE /subs/1
   # DELETE /subs/1.json
   def destroy
@@ -72,6 +77,6 @@ class SubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_params
-      params.require(:sub).permit(:name, :description, :frequency, :amount, :frequency)
+      params.require(:sub).permit(:name, :description, :frequency, :amount, :frequency, :archive)
     end
 end
