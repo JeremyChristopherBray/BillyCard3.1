@@ -19,15 +19,15 @@ class ApplicationController < ActionController::Base
   helper_method 'annual_income_minus_tax'
 
   def annual_subs
-    monthly_subs * 12
+    monthly_active_subs * 12
   end
 
   def weekly_subs
-    monthly_subs / 4
+    monthly_active_subs / 4
   end
 
   def total_monthly_expenses
-    n = current_user.expenses.sum(:amount) + monthly_subs + total_monthly_payment
+    n = current_user.expenses.sum(:amount) + monthly_active_subs + total_monthly_payment
     n
   end
   helper_method 'total_monthly_expenses'
@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
   end
 
   def subs_total_monthly_payment
-    n = current_user.subs.sum(&:amount)
+    n = monthly_active_subs
     n
   end
   helper_method 'subs_total_monthly_payment'

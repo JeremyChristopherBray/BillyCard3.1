@@ -60,7 +60,7 @@
           <div class="mdl-cell mdl-cell--4-col">
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Income</h2>
+                <h2 class="mdl-card__title-text">Monthly Income</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <%= number_to_currency(@monthly_income, unit: "$") %>
@@ -75,7 +75,7 @@
           <div class="mdl-cell mdl-cell--4-col">
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Expenses</h2>
+                <h2 class="mdl-card__title-text">Monthly Expenses</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <%= number_to_currency(@monthly_expenses, unit: "$") %>
@@ -90,7 +90,7 @@
           <div class="mdl-cell mdl-cell--4-col">
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Total</h2>
+                <h2 class="mdl-card__title-text">Funds After Expenses</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <%= number_to_currency(@monthly_leftovers, unit: "$") %>
@@ -109,7 +109,7 @@
           <div class="mdl-cell mdl-cell--4-col">
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Income</h2>
+                <h2 class="mdl-card__title-text">Annual Income</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <%= number_to_currency(@annual_income, unit: "$") %>
@@ -124,7 +124,7 @@
           <div class="mdl-cell mdl-cell--4-col">
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Expenses</h2>
+                <h2 class="mdl-card__title-text">Annual Expenses</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <%= number_to_currency(@annual_expenses, unit: "$") %>
@@ -139,7 +139,7 @@
           <div class="mdl-cell mdl-cell--4-col">
             <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Total</h2>
+                <h2 class="mdl-card__title-text">Funds After Expenses</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <%= number_to_currency(@annual_leftovers, unit: "$") %>
