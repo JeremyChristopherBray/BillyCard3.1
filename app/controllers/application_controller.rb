@@ -3,10 +3,15 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def monthly_subs
-    current_user.subs.sum(:amount)
+  def monthly_active_subs
+    current_user.subs.where(archive: false).sum(:amount)
   end
-  helper_method 'monthly_subs'
+  helper_method 'monthly_active_subs'
+
+  def monthly_archived_subs
+    current_user.subs.where(archive: true).sum(:amount)
+  end
+  helper_method 'monthly_archived_subs'
 
   def annual_income_minus_tax
     current_user.incomes.sum(&:annual_after_tax_income)

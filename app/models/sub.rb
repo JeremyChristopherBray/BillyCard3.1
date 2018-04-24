@@ -2,7 +2,7 @@ class Sub < ApplicationRecord
   belongs_to :user
 
   def annual_cost
-    amount * 12
+    amount * frequency
   end
 
   def total_annual_cost

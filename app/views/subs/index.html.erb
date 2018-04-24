@@ -30,16 +30,27 @@
               <td><%= number_to_currency(sub.annual_cost, unit: "$") %></td>
               <td>
                 <% if sub.archive? %>
-                  <%= form_for sub do |f | %>
-                <%= f.hidden_field :archive, value: false %>
-                <%= f.submit 'Archive' %>
-                <% end %>
-                <% else %>
-                <%= form_for sub do |f|  %>
-                    <%= f.hidden_field :archive, value: true %>
-                    <%= f.submit 'Activate' %>
+                  <%= form_for sub do |f| %>
+                    <%= f.hidden_field :archive, value: false %>
+                    <%= button_tag(type: 'submit') do %>
+                      <i id='unarchive' class="material-icons">unarchive</i>
+                      <div class="mdl-tooltip" data-mdl-for="unarchive">
+                        Activate
+                      </div>
+                    <% end %>
                   <% end %>
-                <% end %></td>
+                <% else %>
+                  <%= form_for sub do |f| %>
+                    <%= f.hidden_field :archive, value: true %>
+                    <%= button_tag(type: 'submit') do %>
+                      <i id='archive' class="material-icons">archive</i>
+                      <div class="mdl-tooltip" data-mdl-for="archive">
+                        Archive
+                      </div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                  </td>
             </tr>
           <% end %>
         </tbody>
@@ -48,8 +59,8 @@
           <td></td>
           <td></td>
           <td></td>
-          <td><%= number_to_currency(@monthly_subs, unit: "$") %></td>
-          <td><%= number_to_currency(@total_annual_subs, unit: "$") %></td>
+          <td><%= number_to_currency(@active_monthly_subs, unit: "$") %></td>
+          <td><%= number_to_currency(@total_active_annual_subs, unit: "$") %></td>
           <td></td>
         </tr>
         </tfoot>
@@ -84,14 +95,25 @@
               <% if sub.archive? %>
                 <%= form_for sub do |f| %>
                   <%= f.hidden_field :archive, value: false %>
-                  <%= f.submit 'Archive' %>
-                <% end %>
+                  <%= button_tag(type: 'submit') do %>
+                    <i id='archive1' class="material-icons">archive</i>
+                    <div class="mdl-tooltip" data-mdl-for="archive1">
+                      Archive
+                    </div>
+                  <% end %>
+            <% end %>
               <% else %>
                 <%= form_for sub do |f| %>
                   <%= f.hidden_field :archive, value: true %>
-                  <%= f.submit 'Activate' %>
+                  <%= button_tag(type: 'submit') do %>
+                    <i id='unarchive1' class="material-icons">unarchive</i>
+                    <div class="mdl-tooltip" data-mdl-for="unarchive1">
+                      Activate
+                    </div>
+                  <% end %>
                 <% end %>
-              <% end %></td>
+              <% end %>
+            </td>
           </tr>
         <% end %>
         </tbody>
@@ -100,8 +122,8 @@
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
-          <td></td>
+          <td><%= number_to_currency(@archived_monthly_subs, unit: "$") %></td>
+          <td><%= number_to_currency(@total_archived_annual_subs, unit: "$") %></td>
           <td></td>
         </tr>
         </tfoot>

@@ -7,8 +7,10 @@ class SubsController < ApplicationController
   def index
     @subs = current_user.subs.where(archive: false)
     @archived_subs = current_user.subs.where.not(archive: false)
-    @monthly_subs = monthly_subs
-    @total_annual_subs = @monthly_subs * 12
+    @active_monthly_subs = monthly_active_subs
+    @total_active_annual_subs = @active_monthly_subs * 12
+    @archived_monthly_subs = monthly_archived_subs
+    @total_archived_annual_subs = @archived_monthly_subs * 12
   end
 
   # GET /subs/1
